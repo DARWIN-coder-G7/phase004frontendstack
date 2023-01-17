@@ -8,7 +8,7 @@ import { SellerService } from '../services/seller.service';
   styleUrls: ['./seller-auth.component.css']
 })
 export class SellerAuthComponent implements OnInit {
-  showlogin = false;
+  showlogin = true;
   authError:string = '';
   constructor(private seller: SellerService) { }
   ngOnInit(): void {

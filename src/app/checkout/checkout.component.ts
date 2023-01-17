@@ -34,7 +34,7 @@ export class CheckoutComponent implements OnInit {
         userid,id:undefined
       }
       this.product.ordernow(orderdata).subscribe((result)=>{
-        if(result){alert("orderis placed")
+        if(result){alert("Order Is Placed")
         this.roter.navigate(['/cp'])
       }
       })

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { ChangepassComponent } from './changepass/changepass.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import { HomeComponent } from './home/home.component';
@@ -59,6 +60,11 @@ path:'search/:query'
 {
   component:ConfirmpageComponent,
   path:'cp'
+},
+{
+  component:ChangepassComponent,
+  path:'changeit',
+  canActivate:[AuthGuard]
 }
 ];
 

@@ -43,4 +43,7 @@ export class SellerService {
     })
     console.warn(data)
   }
+  changepin(data:any){
+    return this.http.put(`http://localhost:3000/seller/${data.id}`,data)
+  }
 }
