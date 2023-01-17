@@ -76,4 +76,9 @@ export class ProductService {
     ordernow(data:order){
       return this.http.post(`http://localhost:3000/orders`,data);
     }
+    orderlist(){
+      let userstore = localStorage.getItem('user');
+      let userdata = userstore && JSON.parse(userstore);
+      return this.http.get<order[]>(`http://localhost:3000/orders?usereid=`+userdata.id)
+    }
 }

@@ -9,7 +9,31 @@
             <input type="email" class="form-input" name = "email" placeholder="enter email id" ngModel />
             <input type="text" class="form-input" name = "address" placeholder="enter address" ngModel />
             <input type="number" class="form-input" name = "mobileno" placeholder="enter mobileno" ngModel/>
-            <button class = "form-button">ORDER NOW</button>
+            <input type="text" 
+            class="form-input"
+             name = "upiid" 
+             placeholder="enter upi id"
+              ngModel
+             minlength="4"
+             #upiid ="ngModel"
+              required/>
+              <p class = "invalid-input">
+                <span *ngIf="upiid.invalid && upiid.touched">
+                    Enter pin length min 4 digit</span>
+                </p>
+            <input type="text" 
+            class="form-input"
+             name = "upipin" 
+             placeholder="enter upi pin"
+              ngModel
+              #upipin ="ngModel"
+              minlength="4"
+            required/>
+            <p class = "invalid-input">
+                <span *ngIf="upipin.invalid && upipin.touched">
+                Enter pin length min 4 digit</span>
+                </p>
+            <button [disabled]="orderdata.invalid" class = "form-button">ORDER NOW</button>
             </form>
         </div>
         <div class = "col-sm-5">

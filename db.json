@@ -87,19 +87,41 @@
       "email": "user@gmail.com",
       "password": "adminis",
       "id": 1
+    },
+    {
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "id": 2
     }
   ],
   "cart": [
-    
-  ],
-  "orders": [
     {
-      "email": "wesdss",
-      "address": "qqq",
-      "mobileno": 11111,
-      "totalprice": 2970,
+      "name": "karaikudi meal",
+      "price": "200",
+      "category": "meal",
+      "color": "oormila",
+      "desc": "A best meal",
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "quantity": 1,
+      "productid": 4,
       "userid": 1,
       "id": 1
+    },
+    {
+      "name": "pizza",
+      "price": "300",
+      "category": "a full food",
+      "color": "spicy&crispy",
+      "desc": "a good pizza at affordable cost",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "quantity": 1,
+      "productid": 7,
+      "userid": 2,
+      "id": 2
     }
+  ],
+  "orders": [
+    
   ]
 }

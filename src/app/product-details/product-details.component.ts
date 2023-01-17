@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 
@@ -13,7 +13,7 @@ export class ProductDetailsComponent implements OnInit{
   prodquantity:number=1;
   removecart = false;
   cartdata:product|undefined;
-      constructor(private activeroute:ActivatedRoute,private prdct:ProductService){}
+      constructor(private activeroute:ActivatedRoute,private prdct:ProductService,private navroute:Router){}
   ngOnInit(): void {
     let productid = this.activeroute.snapshot.paramMap.get('productid');
     productid && this.prdct.getproduct(productid).subscribe((result)=>{
@@ -84,5 +84,9 @@ export class ProductDetailsComponent implements OnInit{
     })
    }
    this.removecart= false;
+  }
+  buynow(){
+    this.addtocart();
+    this.navroute.navigate(['/checkout'])
   }
 }

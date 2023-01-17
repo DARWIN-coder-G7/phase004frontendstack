@@ -3,9 +3,28 @@
     <h1>USER SIGN UP</h1>
     <form #usersignup="ngForm" class="common-form" (ngSubmit)="signup(usersignup.value)">
         <input class="form-input" type="text"name ="name" placeholder="Enter username"ngModel />
-        <input class="form-input" type="email"name ="email" placeholder="Enter email"ngModel />
-        <input class="form-input" type="password"name ="password" placeholder="Enter password"ngModel />
-        <button class="form-button">SIGN UP</button>
+        <input class="form-input" 
+        type="email"name ="email"
+         placeholder="Enter email"
+         ngModel
+         #email="ngModel" 
+        required
+         />
+         <p class = "invalid-input"><span *ngIf="email.invalid && email.touched">please enter valid email</span>
+         </p>
+        <input class="form-input" type="password"
+        name ="password" placeholder="Enter password"
+        ngModel 
+        minlength="6"
+        maxlength="14"
+        #password = "ngModel" 
+        required
+        />
+        <p class = "invalid-input">
+            <span *ngIf="password.invalid && password.touched">
+            please enter valid password</span>
+            </p>
+        <button [disabled]="usersignup.invalid" class="form-button">SIGN UP</button>
         <p>Already have Acc?<a (click)="openlogin()">Click here</a></p>
     </form>
    </div>

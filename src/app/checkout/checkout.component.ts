@@ -1,5 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { order } from '../data-type';
 import { ProductService } from '../services/product.service';
 
@@ -10,7 +11,7 @@ import { ProductService } from '../services/product.service';
 })
 export class CheckoutComponent implements OnInit {
   totalprice:number|undefined
-    constructor( private product:ProductService){}
+    constructor( private product:ProductService,private roter:Router){}
   ngOnInit(): void {
     this.product.currentcart().subscribe((result)=>{
     
@@ -30,10 +31,12 @@ export class CheckoutComponent implements OnInit {
       let orderdata:order = {
         ...data,
         totalprice:this.totalprice,
-        userid
+        userid,id:undefined
       }
       this.product.ordernow(orderdata).subscribe((result)=>{
-        if(result){alert("orderis placed")}
+        if(result){alert("orderis placed")
+        this.roter.navigate(['/cp'])
+      }
       })
     }
   }
